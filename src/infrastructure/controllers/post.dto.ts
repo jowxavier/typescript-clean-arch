@@ -1,10 +1,10 @@
-export interface CreatePostInput {
+export interface PostDtoInput {
     title: string;
     subject: string;
     description: string; 
 };
 
-export interface CreatePostOutput {
+export interface PostDtoOutput {
     id: string;
     title: string;
     subject: string;

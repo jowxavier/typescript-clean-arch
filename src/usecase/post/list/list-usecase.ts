@@ -1,10 +1,10 @@
 import { PostRepositoryInterface } from "../../../domain/post/repository/post.repository";
-import { ListPostOutput } from "./list.dto";
+import { PostDtoOutput } from "../../../infrastructure/controllers/post.dto";
 
 export class ListPostUseCase {
     constructor(private postRepository: PostRepositoryInterface) {}
 
-    async execute(): Promise<ListPostOutput[]> {
+    async execute(): Promise<PostDtoOutput[]> {
         const posts = await this.postRepository.findAll();
         return posts.map(p => p.toJson());
     }
